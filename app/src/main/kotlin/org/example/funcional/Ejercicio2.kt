@@ -3,8 +3,8 @@ package org.example.funcional
 fun main() {
     val predicadoIgualdad: (String, String) -> Boolean = { a, b -> a == b }
 
-    val buscaCoincidencia: (List<String>, String) -> String? = { lista, palabra ->
-        lista.first { predicadoIgualdad(it, palabra) }
+    val buscaCoincidencia: (List<String>, String) -> List<String> = { lista, palabra ->
+        lista.filter { predicadoIgualdad(it, palabra) }
     }
 
     // ejemplo
