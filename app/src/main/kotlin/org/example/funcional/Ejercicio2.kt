@@ -1,15 +1,15 @@
 package org.example.funcional
 
 fun main() {
-    val predicadoIgualdad: (String, String) -> Boolean = { a, b -> a == b }
+    val cadenaContieneCadena: (String, String) -> Boolean = { a, b -> a.contains(b) }
 
     val buscaCoincidencia: (List<String>, String) -> List<String> = { lista, palabra ->
-        lista.filter { predicadoIgualdad(it, palabra) }
+        lista.filter { cadenaContieneCadena(it, palabra) }
     }
 
     // ejemplo
-    val nombres = listOf("Ana", "Juan", "Pedro")
-    val encontrado = buscaCoincidencia(nombres, "Juan")
+    val nombres = listOf("Alvaro", "Aaron", "Juanjo", "Juanjo", "Xusa")
+    val encontrado = buscaCoincidencia(nombres, "jo")
 
-    println(encontrado)
+    encontrado.forEach { println(it) }
 }
